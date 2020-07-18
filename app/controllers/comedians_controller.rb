@@ -1,5 +1,9 @@
 class ComediansController < ApplicationController
   def index
-    @comedians = Comedian.all
+    if params[:age]
+      @comedians = Comedian.where(age: params[:age])
+    else
+      @comedians = Comedian.all
+    end
   end
 end
