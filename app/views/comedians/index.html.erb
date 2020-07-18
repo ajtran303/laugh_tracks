@@ -1,7 +1,7 @@
 <% @comedians.each do |comedian| %>
-<section class="<%= comedian.name.downcase %>">
+<section class="<%= comedian.name.downcase.gsub(" ", "-") %>">
   <%= tag.h3 "Name: #{comedian.name}" %>
-  <%= image_tag comedian.image_url, alt: "#{comedian.name.downcase}-image", class: "comedian-thumbnail" %>
+  <%= image_tag comedian.image_url, alt: "Image of the comedian #{comedian.name}", class: "comedian-thumbnail" %>
   <%= tag.p "Age: #{comedian.age}" %>
   <%= tag.p "City: #{comedian.city}" %>
   <%= tag.h4 "#{comedian.name}'s TV Specials (#{comedian.tv_specials.size} total):" %>

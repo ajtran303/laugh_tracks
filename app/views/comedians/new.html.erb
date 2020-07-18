@@ -1,0 +1,11 @@
+<%= form_tag "/comedians", method: :post, class: "new-comedian-form" do %>
+<%= label_tag :name, "Comedian Name:" %>
+<%= text_field_tag :name %>
+<%= label_tag :age, "Age:" %>
+<%= text_field_tag :age %>
+<%= label_tag :city, "City of Origin:" %>
+<%= text_field_tag :city %>
+<%= label_tag :image_url, "Image URL:" %>
+<%= text_field_tag :image_url %>
+<%= submit_tag "Submit New Comedian" %>
+<% end %>
