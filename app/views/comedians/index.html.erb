@@ -1,0 +1,8 @@
+<% @comedians.each do |comedian| %>
+<section class="<%= comedian.name.downcase %>">
+  <%= tag.h3 "Name: #{comedian.name}" %>
+  <%= tag.p "Age: #{comedian.age}" %>
+  <%= tag.p "City: #{comedian.city}" %>
+</section>
+
+<% end %>
