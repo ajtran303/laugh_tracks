@@ -51,12 +51,12 @@ RSpec.describe "Comedians Index Spec" do
 
         within(".casper") do
           expect(page).to have_css("img[src*='generic-image-placeholder']")
-          expect(page).to have_css("img[alt='#{@casper.name.downcase}-image']")
+          expect(page).to have_css("img[alt='Image of the comedian #{@casper.name}']")
         end
 
         within(".spiderman") do
           expect(page).to have_css("img[src*='generic-image-placeholder']")
-          expect(page).to have_css("img[alt='#{@spiderman.name.downcase}-image']")
+          expect(page).to have_css("img[alt='Image of the comedian #{@spiderman.name}']")
         end
       end
     end
