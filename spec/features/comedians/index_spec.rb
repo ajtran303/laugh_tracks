@@ -35,13 +35,13 @@ RSpec.describe "Comedians Index Spec" do
         visit "/comedians"
 
         within(".casper") do
-          expect(page).to have_content("#{@casper.name}'s TV Specials:")
+          expect(page).to have_content("#{@casper.name}'s TV Specials (2 total):")
           expect(page).to have_content("#{@spooktober1.name} (#{@spooktober1.run_time} mins)")
           expect(page).to have_content("#{@spooktober2.name} (#{@spooktober2.run_time} mins)")
         end
 
         within(".spiderman") do
-          expect(page).to have_content("#{@spiderman.name}'s TV Specials:")
+          expect(page).to have_content("#{@spiderman.name}'s TV Specials (1 total):")
           expect(page).to have_content("#{@spidertober.name} (#{@spidertober.run_time} mins)")
         end
       end
