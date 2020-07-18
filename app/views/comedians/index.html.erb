@@ -3,6 +3,9 @@
   <%= tag.h3 "Name: #{comedian.name}" %>
   <%= tag.p "Age: #{comedian.age}" %>
   <%= tag.p "City: #{comedian.city}" %>
+  <%= tag.h4 "#{comedian.name}'s TV Specials:'" %>
+  <% comedian.tv_specials.each do |special| %>
+  <%= tag.p "#{special.name} (#{special.run_time} mins)" %>
+  <% end %>
 </section>
-
 <% end %>
