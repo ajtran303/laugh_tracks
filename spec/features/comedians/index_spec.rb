@@ -75,5 +75,32 @@ RSpec.describe "Comedians Index Spec" do
       end
     end
 
+    describe "I see an area at the top of the page called 'Statistics'" do
+      it "with the average age and unique origin cities of all comedians on the page" do
+        visit "/comedians"
+
+        within("#statistics") do
+          expect(page).to have_content("Statistics:")
+          expect(page).to have_content("Average Comedian Age: 64")
+          expect(page).to have_content("Cities of Origin: Boston, New York City")
+        end
+
+        visit "/comedians?age=100"
+
+        within("#statistics") do
+          expect(page).to have_content("Statistics:")
+          expect(page).to have_content("Average Comedian Age: 100")
+          expect(page).to have_content("Cities of Origin: Boston")
+        end
+
+        visit "/comedians?age=28"
+
+        within("#statistics") do
+          expect(page).to have_content("Statistics:")
+          expect(page).to have_content("Average Comedian Age: 28")
+          expect(page).to have_content("Cities of Origin: New York City")
+        end
+      end
+    end
   end
 end
