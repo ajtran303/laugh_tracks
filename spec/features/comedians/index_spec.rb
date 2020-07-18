@@ -2,8 +2,10 @@ require "rails_helper"
 
 RSpec.describe "Comedians Index Spec" do
   before :each do
-    @casper = Comedian.create!(name: "Casper", age: 100, city: "Boston")
-    @spiderman = Comedian.create!(name: "Spiderman", age: 28, city: "New York City")
+    @image_url = "https://www.webfx.com/blog/images/cdn.designinstruct.com/files/582-how-to-image-placeholders/generic-image-placeholder.png"
+
+    @casper = Comedian.create!(name: "Casper", age: 100, city: "Boston", image_url: @image_url)
+    @spiderman = Comedian.create!(name: "Spiderman", age: 28, city: "New York City", image_url: @image_url)
 
     @spooktober1 = @casper.tv_specials.create!(name: "Spook-Tober!", run_time: 80 )
     @spooktober2 = @casper.tv_specials.create!(name: "Spook-Tober! Encore!", run_time: 120 )
