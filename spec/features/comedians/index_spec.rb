@@ -43,6 +43,17 @@ RSpec.describe "Comedians Index Spec" do
           expect(page).to have_content("#{@spidertober.name} (#{@spidertober.run_time} mins)")
         end
       end
+
+      it "I see a thumbnail image for each comedian" do
+        within(".casper") do
+          expect(page).to have_css("img[src*='generic-image-placeholder']")
+          expect(page).to have_css("img[alt='#{@casper.name.downcase}-image']")
+        end
+        within(".spiderman") do
+          expect(page).to have_css("img[src*='generic-image-placeholder']")
+          expect(page).to have_css("img[alt='#{@spiderman.name.downcase}-image']")
+        end
+      end
     end
   end
 
