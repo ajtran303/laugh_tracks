@@ -1,6 +1,7 @@
 <% @comedians.each do |comedian| %>
 <section class="<%= comedian.name.downcase %>">
   <%= tag.h3 "Name: #{comedian.name}" %>
+  <%= image_tag comedian.image_url, alt: "#{comedian.name.downcase}-image" %>
   <%= tag.p "Age: #{comedian.age}" %>
   <%= tag.p "City: #{comedian.city}" %>
   <%= tag.h4 "#{comedian.name}'s TV Specials:'" %>
