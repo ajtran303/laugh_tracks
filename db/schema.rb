@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20200718020726) do
     t.string "name"
     t.integer "age"
     t.string "city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "image_url"
   end
 
@@ -26,6 +28,8 @@ ActiveRecord::Schema.define(version: 20200718020726) do
     t.string "name"
     t.integer "run_time"
     t.bigint "comedian_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["comedian_id"], name: "index_tv_specials_on_comedian_id"
   end
 

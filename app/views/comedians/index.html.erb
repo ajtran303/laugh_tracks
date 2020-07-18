@@ -1,3 +1,9 @@
+<section id="statistics">
+  <%= tag.h2 "Statistics:" %>
+  <%= tag.p "Average Comedian Age: #{@comedians.average_age.round(2)}" %>
+  <%= tag.p "Cities of Origin: #{@comedians.cities.join(", ")}" %>
+</section>
+
 <% @comedians.each do |comedian| %>
 <section class="<%= comedian.name.downcase.gsub(" ", "-") %>">
   <%= tag.h3 "Name: #{comedian.name}" %>
